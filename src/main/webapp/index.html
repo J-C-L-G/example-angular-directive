@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <title>Angular Controller &lt;&gt; Directive communication example</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.4/css/bootstrap.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.3.15/angular.js"></script>
+    <script src="app.js"></script>
+    <style>
+        .controller-scope {
+            background-color: #7887AB;
+        }
+        .directive-scope {
+            background-color: #55AA55;
+        }
+    </style>
+</head>
+<body>
+<div class="container" ng-controller='MainCtrl'>
+    <h1>{{greeting}}</h1>
+    <div class="controller-scope">
+        <h2>This is the controller scope. </h2>
+        <span>Number of clicks: {{clicks}}</span>
+    </div>
+    <directive options="options" on-click='onClick(clicks)'></directive>
+</div>
+</body>
+</html>
