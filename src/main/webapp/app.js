@@ -1,21 +1,14 @@
 var appModule = angular.module('myApp', []); 
 
-appModule.controller('MainCtrl', ['mainService','$scope', '$http', function(mainService, $scope, $http) {
+appModule.controller('MainCtrl', ['$scope', function($scope) {
     $scope.greeting = 'Controller <> Directive communication example!';
     $scope.clicks = 0;
-    
+
     $scope.onClick = function(clicks) {
         $scope.clicks = clicks;
         $scope.options.registerClicks(clicks);
     }
 }]);
-
-appModule.service('mainService', function($http) {
-    return {
-        login : function() {
-        }
-    };
-});
 
 appModule.directive('directive', function() {
     return {
